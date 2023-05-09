@@ -15,7 +15,14 @@
 </body>
 </html>
 
-echo
-
 <?php
+    $counter = $_POST['counter'];
+
+    // for($i = 1; $i<=$counter; $i++){
+    //     echo $i . "</br>" ;
+    // }
+
+    for($i=$counter; $i>0; $i--){
+        echo $i . "</br>";
+    }
 ?>
