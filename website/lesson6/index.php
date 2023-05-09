@@ -27,7 +27,7 @@
     // echo $foods[0] . "</br>";
     // echo $foods[1] . "</br>";
     // echo $foods[2] . "</br>";
-
+    echo count($foods) . "</br>";
     foreach($revers_foods as $food){
         echo $food . "</br>";
     }
