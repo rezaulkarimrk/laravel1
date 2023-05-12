@@ -36,6 +36,16 @@ $posts = [
         'title' => 'Intro to PHP',
         'content' => 'This is a short intro to PHP',
         'is_new' => false,
+    ],
+    3 => [
+        'title' => 'Intro to JavaScript',
+        'content' => 'This is a short intro to JavaScript',
+        'is_new' => false,
+    ],
+    4 => [
+        'title' => 'Intro to React',
+        'content' => 'This is a short intro to React',
+        'is_new' => false,
     ]
 ];
 Route::get('/posts', function () use ($posts) {
@@ -56,3 +66,9 @@ Route::get('/posts/{id}', function ($id) use ($posts) {
 Route::get('/recent_posts/{days_ago?}', function ( string $daysAgo = "2555") {
     return "Post from {$daysAgo} days ago";
 })->name('post.recent.index');
+
+Route::get('/fun/responses', function () use ($posts) {
+    return response($posts, 201)
+    ->header('Content-Type', 'application/json')
+    ->cookie('MY_COOKIER', 'Rezaul Karim RK', 3600);
+});
