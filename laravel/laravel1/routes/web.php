@@ -37,7 +37,7 @@ $posts = [
         'content' => 'This is a short intro to PHP',
         'is_new' => false,
     ]
-    ];
+];
 Route::get('/posts', function () use ($posts) {
     //compact($posts) === ['posts' => $posts] //both are same work
     return view('posts.index', ['posts' => $posts]);

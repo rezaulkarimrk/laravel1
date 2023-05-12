@@ -3,7 +3,17 @@
 @section('title', 'Blog Posts')
 
 @section('content')
-    @foreach ($posts as $key => $post)
+    {{-- @if(count($posts))
+        @foreach ($posts as $key => $post)
+            <div>{{ $key }}.{{ $post['title'] }}</div>
+        @endforeach
+    @else
+        No Posts found!
+    @endif --}}
+
+    @forelse ($posts as $key => $post)
         <div>{{ $key }}.{{ $post['title'] }}</div>
-    @endforeach
+    @empty
+        No posts found
+    @endforelse
 @endsection
